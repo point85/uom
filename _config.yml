@@ -1,0 +1,28 @@
+title: Point85 Units of Measure
+email: point85.llc@gmail.com
+description: >- # this means to ignore newlines until "baseurl:"
+    Units of Measure
+author: Kent Randall
+baseurl: "/uom" # the subpath of the site
+url: "" # the base hostname & protocol for the site
+
+github_username:  point85
+
+# Build settings
+theme: minima
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag  
+  
+include:
+  - images
+  - docs
+  - files
+  
+header_pages:
+  - index.md
+  - library.md
+  - application.md
+  - blog.md  
+  - about.md  
