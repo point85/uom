@@ -3,136 +3,19 @@ layout: page
 title: About
 permalink: /about/
 ---
+<img src="../resources/images/EngineeringSketch.jpg" alt="EngineeringSketch" style="width:50%; display: block; margin-left: auto; margin-right: auto;"> 
 
-This is the UOM about page. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+The Point 85 Caliper library project manages units of measure and conversions between them. Caliper is designed to be lightweight and simple to use, yet comprehensive. It includes a large number of pre-defined units of measure commonly found in science, engineering, technology, finance and the household. These recognized systems of measurement include the International System of Units (SI), International Customary, United States and British Imperial. Custom units of measure can also be created in the Caliper unified measurement system. Custom units are specific to a trade or industry such as industrial packaging where units of can, bottle, case and pallet are typical. Custom units can be added to the unified system for units that are not pre-defined.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+Point 85 maintains these open source projects hosted by GitHub repositories:
+- [Overall Equipment Effectiveness (OEE)](https://github.com/point85/OEE-Designer):  This project and its subprojects manages Overall Equipment Effectiveness (OEE).
+- [OEE Operations](https://github.com/point85/OEE-Operations):  This project manages the Vaadin operator application.
+- [OEE Mobile](https://github.com/point85/OEE-Mobile):  This Flutter/Dart project manages the iOS and Android mobile applications as well as the macOS, Linux, Windows and Chrome/Edge applications.
+- [Caliper](https://github.com/point85/caliper): This Java project manages units of measure and the conversions between them.
+- [Caliper Sharp](https://github.com/point85/CaliperSharp):  This C# library project manages units of measure and the conversions between them.
+- [PyCaliper](https://github.com/point85/PyCaliper): This Python library project manages units of measure and the conversions between them.
+- [Shift](https://github.com/point85/Shift): This Java library project manages work schedules.
+- [ShiftSharp](https://github.com/point85/ShiftSharp): This C# library project manages work schedules.
+- [PyShift](https://github.com/point85/PyShift):  This Python library project manages work schedules.
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
 
-
-[jekyll-organization]: https://github.com/jekyll
-
-# Markdown Cheat Sheet
-
-Thanks for visiting [The Markdown Guide](https://www.markdownguide.org)!
-
-This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements. It can’t cover every edge case, so if you need more information about any of these elements, refer to the reference guides for [basic syntax](https://www.markdownguide.org/basic-syntax/) and [extended syntax](https://www.markdownguide.org/extended-syntax/).
-
-## Basic Syntax
-
-These are the elements outlined in John Gruber’s original design document. All Markdown applications support these elements.
-
-### Heading
-
-# H1
-## H2
-### H3
-
-### Bold
-
-**bold text**
-
-### Italic
-
-*italicized text*
-
-### Blockquote
-
-> blockquote
-
-### Ordered List
-
-1. First item
-2. Second item
-3. Third item
-
-### Unordered List
-
-- First item
-- Second item
-- Third item
-
-### Code
-
-`code`
-
-### Horizontal Rule
-
----
-
-### Link
-
-[Markdown Guide](https://www.markdownguide.org)
-
-### Image
-
-![alt text](https://www.markdownguide.org/assets/images/tux.png)
-
-## Extended Syntax
-
-These elements extend the basic syntax by adding additional features. Not all Markdown applications support these elements.
-
-### Table
-
-| Syntax | Description |
-| ----------- | ----------- |
-| Header | Title |
-| Paragraph | Text |
-
-### Fenced Code Block
-
-```
-{
-  "firstName": "John",
-  "lastName": "Smith",
-  "age": 25
-}
-```
-
-### Footnote
-
-Here's a sentence with a footnote. [^1]
-
-[^1]: This is the footnote.
-
-### Heading ID
-
-### My Great Heading {#custom-id}
-
-### Definition List
-
-term
-: definition
-
-### Strikethrough
-
-~~The world is flat.~~
-
-### Task List
-
-- [x] Write the press release
-- [ ] Update the website
-- [ ] Contact the media
-
-### Emoji
-
-That is so funny! :joy:
-
-(See also [Copying and Pasting Emoji](https://www.markdownguide.org/extended-syntax/#copying-and-pasting-emoji))
-
-### Highlight
-
-I need to highlight these ==very important words==.
-
-### Subscript
-
-H~2~O
-
-### Superscript
-
-X^2^
