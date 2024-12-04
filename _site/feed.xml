@@ -1,1 +1,127 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/uom/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/uom/" rel="alternate" type="text/html" /><updated>2024-12-04T08:49:44-08:00</updated><id>http://localhost:4000/uom/feed.xml</id><title type="html">Point85 Units of Measure</title><subtitle>Units of Measure</subtitle><author><name>Kent Randall</name></author></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/uom/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/uom/" rel="alternate" type="text/html" /><updated>2024-12-04T11:41:30-08:00</updated><id>http://localhost:4000/uom/feed.xml</id><title type="html">Point85 Units of Measure</title><subtitle>Units of Measure</subtitle><author><name>Kent Randall</name></author><entry><title type="html">What is a Perm?</title><link href="http://localhost:4000/uom/uom/blog/2024/11/29/perm.html" rel="alternate" type="text/html" title="What is a Perm?" /><published>2024-11-29T23:00:00-08:00</published><updated>2024-11-29T23:00:00-08:00</updated><id>http://localhost:4000/uom/uom/blog/2024/11/29/perm</id><content type="html" xml:base="http://localhost:4000/uom/uom/blog/2024/11/29/perm.html"><![CDATA[<p>A perm is a unit of permeance or “water vapor transmission” given differences in partial pressures on two sides of a membrane or material.  It is commonly used in building science as a measure of how much water vapor can pass through a material.</p>
+
+<p>The U.S. perm is defined as 1 grain of water vapor per hour, per square foot, per inch of mercury.  Its base units are seconds/foot.  The metric perm is defined as 1 gram of water vapor per day, per square meter, per millimeter of mercury.  Its base units are seconds/meter.</p>
+
+<p>The equivalent SI unit is 1 nanogram per second per square meter per pascal.</p>
+
+<p>In the Point 85 Java Caliper library these calculations are:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">MeasurementSystem</span> <span class="n">sys</span> <span class="o">=</span> <span class="nc">MeasurementSystem</span><span class="o">.</span><span class="na">instance</span><span class="o">();</span>
+
+<span class="nc">UnitOfMeasure</span> <span class="n">inHg</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="na">getUOM</span><span class="o">(</span><span class="nc">Unit</span><span class="o">.</span><span class="na">IN_HG</span><span class="o">);</span>
+
+<span class="nc">UnitOfMeasure</span> <span class="n">hr</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="na">getUOM</span><span class="o">(</span><span class="nc">Unit</span><span class="o">.</span><span class="na">HOUR</span><span class="o">);</span>
+
+<span class="nc">UnitOfMeasure</span> <span class="n">ft2</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="na">getUOM</span><span class="o">(</span><span class="nc">Unit</span><span class="o">.</span><span class="na">SQUARE_FOOT</span><span class="o">);</span>
+
+<span class="nc">UnitOfMeasure</span> <span class="n">s</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="na">getUOM</span><span class="o">(</span><span class="nc">Unit</span><span class="o">.</span><span class="na">SECOND</span><span class="o">);</span>
+
+<span class="nc">UnitOfMeasure</span> <span class="n">day</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="na">getUOM</span><span class="o">(</span><span class="nc">Unit</span><span class="o">.</span><span class="na">DAY</span><span class="o">);</span>
+
+<span class="nc">UnitOfMeasure</span> <span class="n">msq</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="na">getUOM</span><span class="o">(</span><span class="nc">Unit</span><span class="o">.</span><span class="na">SQUARE_METRE</span><span class="o">);</span>
+
+<span class="nc">UnitOfMeasure</span> <span class="nc">Pa</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="na">getUOM</span><span class="o">(</span><span class="nc">Unit</span><span class="o">.</span><span class="na">PASCAL</span><span class="o">);</span>
+
+<span class="nc">UnitOfMeasure</span> <span class="n">ng</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="na">getUOM</span><span class="o">(</span><span class="nc">Prefix</span><span class="o">.</span><span class="na">NANO</span><span class="o">,</span> <span class="nc">Unit</span><span class="o">.</span><span class="na">GRAM</span><span class="o">);</span>
+
+<span class="nc">UnitOfMeasure</span> <span class="n">g</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="na">getUOM</span><span class="o">(</span><span class="nc">Unit</span><span class="o">.</span><span class="na">GRAM</span><span class="o">);</span>
+
+<span class="nc">UnitOfMeasure</span> <span class="n">grain</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="na">getUOM</span><span class="o">(</span><span class="nc">Unit</span><span class="o">.</span><span class="na">GRAIN</span><span class="o">);</span>
+
+<span class="c1">// mm of Mercury pressure</span>
+<span class="nc">UnitOfMeasure</span> <span class="n">mmHg</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="na">createScalarUOM</span><span class="o">(</span><span class="nc">UnitType</span><span class="o">.</span><span class="na">PRESSURE</span><span class="o">,</span> <span class="s">"mmHg"</span><span class="o">,</span> <span class="s">"mmHg"</span><span class="o">,</span> <span class="s">"mmHg"</span><span class="o">);</span>
+
+<span class="n">mmHg</span><span class="o">.</span><span class="na">setConversion</span><span class="o">(</span><span class="mf">133.3223684d</span><span class="o">,</span> <span class="nc">Pa</span><span class="o">);</span>
+
+<span class="c1">// US perm</span>
+<span class="nc">UnitOfMeasure</span> <span class="n">us1</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="na">createQuotientUOM</span><span class="o">(</span><span class="n">grain</span><span class="o">,</span> <span class="n">inHg</span><span class="o">);</span>
+
+<span class="nc">UnitOfMeasure</span> <span class="n">us2</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="na">createQuotientUOM</span><span class="o">(</span><span class="n">us1</span><span class="o">,</span> <span class="n">ft2</span><span class="o">);</span>
+
+<span class="nc">UnitOfMeasure</span> <span class="n">perm</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="na">createQuotientUOM</span><span class="o">(</span><span class="n">us2</span><span class="o">,</span> <span class="n">hr</span><span class="o">);</span>
+
+<span class="n">perm</span><span class="o">.</span><span class="na">setName</span><span class="o">(</span><span class="s">"perm"</span><span class="o">);</span>
+
+<span class="n">perm</span><span class="o">.</span><span class="na">setSymbol</span><span class="o">(</span><span class="s">"perm"</span><span class="o">);</span>
+
+<span class="n">perm</span><span class="o">.</span><span class="na">setDescription</span><span class="o">(</span><span class="s">"gn/hr/ft2/inHg"</span><span class="o">);</span>
+	
+
+<span class="c1">// metric perm</span>
+<span class="nc">UnitOfMeasure</span> <span class="n">m1</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="na">createQuotientUOM</span><span class="o">(</span><span class="n">g</span><span class="o">,</span> <span class="n">day</span><span class="o">);</span>
+
+<span class="nc">UnitOfMeasure</span> <span class="n">m2</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="na">createQuotientUOM</span><span class="o">(</span><span class="n">m1</span><span class="o">,</span> <span class="n">msq</span><span class="o">);</span>
+
+<span class="nc">UnitOfMeasure</span> <span class="n">mperm</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="na">createQuotientUOM</span><span class="o">(</span><span class="n">m2</span><span class="o">,</span> <span class="n">mmHg</span><span class="o">);</span>
+
+<span class="n">mperm</span><span class="o">.</span><span class="na">setName</span><span class="o">(</span><span class="s">"mperm"</span><span class="o">);</span>
+
+<span class="n">mperm</span><span class="o">.</span><span class="na">setSymbol</span><span class="o">(</span><span class="s">"mperm"</span><span class="o">);</span>
+
+<span class="n">mperm</span><span class="o">.</span><span class="na">setDescription</span><span class="o">(</span><span class="s">"g/day/m2/mmHg"</span><span class="o">);</span>
+
+<span class="c1">// Equivalent SI unit</span>
+<span class="nc">UnitOfMeasure</span> <span class="n">si1</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="na">createQuotientUOM</span><span class="o">(</span><span class="n">ng</span><span class="o">,</span> <span class="n">s</span><span class="o">);</span>
+
+<span class="nc">UnitOfMeasure</span> <span class="n">si2</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="na">createQuotientUOM</span><span class="o">(</span><span class="n">si1</span><span class="o">,</span> <span class="n">msq</span><span class="o">);</span>
+
+<span class="nc">UnitOfMeasure</span> <span class="n">eqSI</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="na">createQuotientUOM</span><span class="o">(</span><span class="n">si2</span><span class="o">,</span> <span class="nc">Pa</span><span class="o">);</span>
+</code></pre></div></div>]]></content><author><name>Kent Randall</name></author><category term="UOM" /><category term="blog" /><summary type="html"><![CDATA[A perm is a unit of permeance or “water vapor transmission” given differences in partial pressures on two sides of a membrane or material. It is commonly used in building science as a measure of how much water vapor can pass through a material.]]></summary></entry><entry><title type="html">Newton’s Law of Gravitation</title><link href="http://localhost:4000/uom/uom/blog/2024/11/28/gravity.html" rel="alternate" type="text/html" title="Newton’s Law of Gravitation" /><published>2024-11-28T23:00:00-08:00</published><updated>2024-11-28T23:00:00-08:00</updated><id>http://localhost:4000/uom/uom/blog/2024/11/28/gravity</id><content type="html" xml:base="http://localhost:4000/uom/uom/blog/2024/11/28/gravity.html"><![CDATA[<p>What is the gravitational force in Newtons between the Earth and the Moon?  Write the calculation in Java, C# and Python using the respective Caliper libraries.</p>
+
+<p>In Java:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">MeasurementSystem</span> <span class="n">sys</span> <span class="o">=</span> <span class="nc">MeasurementSystem</span><span class="o">.</span><span class="na">getSystem</span><span class="o">();</span>
+
+<span class="nc">UnitOfMeasure</span> <span class="n">gUOM</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="na">getUOM</span><span class="o">(</span><span class="nc">Unit</span><span class="o">.</span><span class="na">NEWTON_METRE</span><span class="o">).</span><span class="na">multiply</span><span class="o">(</span><span class="n">sys</span><span class="o">.</span><span class="na">getUOM</span><span class="o">(</span><span class="nc">Unit</span><span class="o">.</span><span class="na">METRE</span><span class="o">)).</span><span class="na">divide</span><span class="o">(</span><span class="n">sys</span><span class="o">.</span><span class="na">createPowerUOM</span><span class="o">(</span><span class="n">sys</span><span class="o">.</span><span class="na">getUOM</span><span class="o">(</span><span class="nc">Unit</span><span class="o">.</span><span class="na">KILOGRAM</span><span class="o">),</span> <span class="mi">2</span><span class="o">));</span>
+
+<span class="nc">Quantity</span> <span class="no">G</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Quantity</span><span class="o">(</span><span class="mf">6.743015</span><span class="no">E</span><span class="o">-</span><span class="mi">11</span><span class="o">,</span> <span class="n">gUOM</span><span class="o">);</span>
+
+<span class="nc">Quantity</span> <span class="n">mEarth</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Quantity</span><span class="o">(</span><span class="mf">5.96E24</span><span class="o">,</span> <span class="n">sys</span><span class="o">.</span><span class="na">getUOM</span><span class="o">(</span><span class="nc">Unit</span><span class="o">.</span><span class="na">KILOGRAM</span><span class="o">));</span>
+
+<span class="nc">Quantity</span> <span class="n">mMoon</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Quantity</span><span class="o">(</span><span class="mf">7.33E22</span><span class="o">,</span> <span class="n">sys</span><span class="o">.</span><span class="na">getUOM</span><span class="o">(</span><span class="nc">Unit</span><span class="o">.</span><span class="na">KILOGRAM</span><span class="o">));</span>
+
+<span class="nc">Quantity</span> <span class="n">distance</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Quantity</span><span class="o">(</span><span class="mf">3.84E08</span><span class="o">,</span> <span class="n">sys</span><span class="o">.</span><span class="na">getUOM</span><span class="o">(</span><span class="nc">Unit</span><span class="o">.</span><span class="na">METRE</span><span class="o">));</span>
+
+<span class="nc">Quantity</span> <span class="n">force</span> <span class="o">=</span> <span class="no">G</span><span class="o">.</span><span class="na">multiply</span><span class="o">(</span><span class="n">mEarth</span><span class="o">).</span><span class="na">multiply</span><span class="o">(</span><span class="n">mMoon</span><span class="o">).</span><span class="na">divide</span><span class="o">(</span><span class="n">distance</span><span class="o">.</span><span class="na">multiply</span><span class="o">(</span><span class="n">distance</span><span class="o">));</span>
+</code></pre></div></div>
+
+<p>In C#:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">MeasurementSystem</span> <span class="n">sys</span> <span class="o">=</span> <span class="nc">MeasurementSystem</span><span class="o">.</span><span class="na">GetSystem</span><span class="o">();</span>
+
+<span class="nc">UnitOfMeasure</span> <span class="n">gUOM</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="na">GetUOM</span><span class="o">(</span><span class="nc">Unit</span><span class="o">.</span><span class="na">NEWTON_METRE</span><span class="o">).</span><span class="na">Multiply</span><span class="o">(</span><span class="n">sys</span><span class="o">.</span><span class="na">GetUOM</span><span class="o">(</span><span class="nc">Unit</span><span class="o">.</span><span class="na">METRE</span><span class="o">)).</span><span class="na">Divide</span><span class="o">(</span><span class="n">sys</span><span class="o">.</span><span class="na">CreatePowerUOM</span><span class="o">(</span><span class="n">sys</span><span class="o">.</span><span class="na">GetUOM</span><span class="o">(</span><span class="nc">Unit</span><span class="o">.</span><span class="na">KILOGRAM</span><span class="o">),</span> <span class="mi">2</span><span class="o">));</span>
+
+<span class="nc">Quantity</span> <span class="no">G</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Quantity</span><span class="o">(</span><span class="mf">6.743015</span><span class="no">E</span><span class="o">-</span><span class="mi">11</span><span class="o">,</span> <span class="n">gUOM</span><span class="o">);</span>
+
+<span class="nc">Quantity</span> <span class="n">mEarth</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Quantity</span><span class="o">(</span><span class="mf">5.96E24</span><span class="o">,</span> <span class="n">sys</span><span class="o">.</span><span class="na">GetUOM</span><span class="o">(</span><span class="nc">Unit</span><span class="o">.</span><span class="na">KILOGRAM</span><span class="o">));</span>
+
+<span class="nc">Quantity</span> <span class="n">mMoon</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Quantity</span><span class="o">(</span><span class="mf">7.33E22</span><span class="o">,</span> <span class="n">sys</span><span class="o">.</span><span class="na">GetUOM</span><span class="o">(</span><span class="nc">Unit</span><span class="o">.</span><span class="na">KILOGRAM</span><span class="o">));</span>
+
+<span class="nc">Quantity</span> <span class="n">distance</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Quantity</span><span class="o">(</span><span class="mf">3.84E08</span><span class="o">,</span> <span class="n">sys</span><span class="o">.</span><span class="na">GetUOM</span><span class="o">(</span><span class="nc">Unit</span><span class="o">.</span><span class="na">METRE</span><span class="o">));</span>
+
+<span class="nc">Quantity</span> <span class="n">force</span> <span class="o">=</span> <span class="no">G</span><span class="o">.</span><span class="na">Multiply</span><span class="o">(</span><span class="n">mEarth</span><span class="o">).</span><span class="na">Multiply</span><span class="o">(</span><span class="n">mMoon</span><span class="o">).</span><span class="na">Divide</span><span class="o">(</span><span class="n">distance</span><span class="o">.</span><span class="na">Multiply</span><span class="o">(</span><span class="n">distance</span><span class="o">));</span>
+</code></pre></div></div>
+
+<p>In Python:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">msys</span> <span class="o">=</span> <span class="nc">MeasurementSystem</span><span class="o">.</span><span class="na">instance</span><span class="o">()</span>
+
+<span class="n">gUOM</span> <span class="o">=</span> <span class="n">msys</span><span class="o">.</span><span class="na">getUOM</span><span class="o">(</span><span class="nc">Unit</span><span class="o">.</span><span class="na">NEWTON_METRE</span><span class="o">).</span><span class="na">multiply</span><span class="o">(</span><span class="n">msys</span><span class="o">.</span><span class="na">getUOM</span><span class="o">(</span><span class="nc">Unit</span><span class="o">.</span><span class="na">METRE</span><span class="o">)).</span><span class="na">divide</span><span class="o">(</span><span class="n">msys</span><span class="o">.</span><span class="na">createPowerUOM</span><span class="o">(</span><span class="n">msys</span><span class="o">.</span><span class="na">getUOM</span><span class="o">(</span><span class="nc">Unit</span><span class="o">.</span><span class="na">KILOGRAM</span><span class="o">),</span> <span class="mi">2</span><span class="o">))</span>
+
+<span class="no">G</span> <span class="o">=</span> <span class="nc">Quantity</span><span class="o">(</span><span class="mf">6.743015</span><span class="no">E</span><span class="o">-</span><span class="mi">11</span><span class="o">,</span> <span class="n">gUOM</span><span class="o">)</span>
+
+<span class="n">mEarth</span> <span class="o">=</span> <span class="nc">Quantity</span><span class="o">(</span><span class="mf">5.96E24</span><span class="o">,</span> <span class="n">msys</span><span class="o">.</span><span class="na">getUOM</span><span class="o">(</span><span class="nc">Unit</span><span class="o">.</span><span class="na">KILOGRAM</span><span class="o">))</span>
+
+<span class="n">mMoon</span> <span class="o">=</span> <span class="nc">Quantity</span><span class="o">(</span><span class="mf">7.33E22</span><span class="o">,</span> <span class="n">msys</span><span class="o">.</span><span class="na">getUOM</span><span class="o">(</span><span class="nc">Unit</span><span class="o">.</span><span class="na">KILOGRAM</span><span class="o">))</span>
+
+<span class="n">distance</span> <span class="o">=</span> <span class="nc">Quantity</span><span class="o">(</span><span class="mf">3.84E08</span><span class="o">,</span> <span class="n">msys</span><span class="o">.</span><span class="na">getUOM</span><span class="o">(</span><span class="nc">Unit</span><span class="o">.</span><span class="na">METRE</span><span class="o">))</span>
+
+<span class="n">force</span> <span class="o">=</span> <span class="no">G</span><span class="o">.</span><span class="na">multiply</span><span class="o">(</span><span class="n">mEarth</span><span class="o">).</span><span class="na">multiply</span><span class="o">(</span><span class="n">mMoon</span><span class="o">).</span><span class="na">divide</span><span class="o">(</span><span class="n">distance</span><span class="o">.</span><span class="na">multiply</span><span class="o">(</span><span class="n">distance</span><span class="o">))</span>
+</code></pre></div></div>]]></content><author><name>Kent Randall</name></author><category term="UOM" /><category term="blog" /><summary type="html"><![CDATA[What is the gravitational force in Newtons between the Earth and the Moon? Write the calculation in Java, C# and Python using the respective Caliper libraries.]]></summary></entry><entry><title type="html">JSR 363 Units of Measure</title><link href="http://localhost:4000/uom/uom/blog/2024/11/27/JSR363.html" rel="alternate" type="text/html" title="JSR 363 Units of Measure" /><published>2024-11-27T23:00:00-08:00</published><updated>2024-11-27T23:00:00-08:00</updated><id>http://localhost:4000/uom/uom/blog/2024/11/27/JSR363</id><content type="html" xml:base="http://localhost:4000/uom/uom/blog/2024/11/27/JSR363.html"><![CDATA[<p>JSR 363 “proposes to establish safe and useful methods for modeling physical quantities”. 
+Caliper shares many of the underlying aspects of JSR 363.  Caliper however does not use Java generics, and there is only one system of units.  Caliper performs math using double amounts whereas JSR 363 uses Numbers.</p>
+
+<p>The tables below compare the JSR 363 specification in the first column to Point85 in the second column.</p>
+
+<p><img src="../../../../../resources/images/jsr_type.png" alt="Type" style="width:100%; display: block; margin-left: auto; margin-right: auto;" /></p>
+
+<p><img src="../../../../resources/images/jsr_uom.png" alt="UOM" style="width:100%; display: block; margin-left: auto; margin-right: auto;" /></p>
+
+<p><img src="../../../resources/images/jsr_quantity.png" alt="Quantity" style="width:100%; display: block; margin-left: auto; margin-right: auto;" /></p>
+
+<p><img src="../../resources/images/jsr_rest.png" alt="Rest" style="width:100%; display: block; margin-left: auto; margin-right: auto;" /></p>]]></content><author><name>Kent Randall</name></author><category term="UOM" /><category term="blog" /><summary type="html"><![CDATA[JSR 363 “proposes to establish safe and useful methods for modeling physical quantities”. Caliper shares many of the underlying aspects of JSR 363. Caliper however does not use Java generics, and there is only one system of units. Caliper performs math using double amounts whereas JSR 363 uses Numbers.]]></summary></entry></feed>
