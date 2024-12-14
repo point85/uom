@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Library
+description: Information on how to use the Unit of Measure library
 permalink: /lib/
 ---
 

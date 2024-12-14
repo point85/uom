@@ -1,6 +1,7 @@
 ---
 layout: home
 title: Introduction
+description: The Point 85 Caliper library project manages units of measure (UOM) and conversions between them
 ---
 
 The Point 85 Caliper library project manages units of measure and conversions between them. Caliper is designed to be lightweight and simple to use, yet comprehensive. It includes a large number of pre-defined units of measure commonly found in science, engineering, technology, finance and the household. These recognized systems of measurement include the International System of Units (SI), International Customary, United States and British Imperial. Custom units of measure can also be created in the Caliper unified measurement system. Custom units are specific to a trade or industry such as industrial packaging where units of can, bottle, case and pallet are typical. Custom units can be added to the unified system for units that are not pre-defined.

@@ -1,7 +1,7 @@
 title: Point85 Units of Measure
 email: point85.llc@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-    Units of Measure
+    Units of Measure (v1.0)
 author: Kent Randall
 baseurl: "/uom" # the subpath of the site
 url: "" # the base hostname & protocol for the site
@@ -13,7 +13,8 @@ theme: minima
 
 plugins:
   - jekyll-feed
-  - jekyll-seo-tag  
+  - jekyll-seo-tag 
+  - jekyll-sitemap  
   
 include:
   - images

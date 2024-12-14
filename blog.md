@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Blog
+description: Blog for posts related to units of measure.
 permalink: /blog/
 ---
 

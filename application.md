@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Application
+description: Description of a Unit of Measure converter and editor desktop application
 permalink: /app/
 ---
 A Unit of Measure converter and editor desktop application has been built in the [Point 85 OEE application](https://point85.github.io/oee) to demonstrate basic capabilities of the library. The user interface is implemented in JavaFX 17 and database persistency is provided by JPA (Java Persistence API) with FXML descriptors. Hibernate is the JPA implementation for a relational database.

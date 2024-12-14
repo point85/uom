@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About
+description: Information on the Point85 Unit of Measure library and other projects.
 permalink: /about/
 ---
 <img src="../resources/images/EngineeringSketch.jpg" alt="EngineeringSketch" style="width:50%; display: block; margin-left: auto; margin-right: auto;"> 
